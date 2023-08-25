@@ -1,0 +1,35 @@
+{
+  "name": "@rmkane/example-ts-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "family.min.js",
+  "scripts": {
+    "build:bundlejs:prd": "webpack --config webpack.config.build-lib.cjs --mode production",
+    "build:bundlejs:dev": "webpack --config webpack.config.build-lib.cjs --mode development",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && run-s build:bundlejs:prd build:bundlejs:dev",
+    "exec:node": "node ./client/example_for_nodejs.cjs",
+    "exec:es6": "SET NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server --config webpack.config.exec_es6.cjs",
+    "exec:browser": "SET NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server --config webpack.config.exec-open-browser.cjs",
+    "exec:all": "run-p exec:node exec:es6 exec:browser",
+    "start": "run-s build exec:all"
+  },
+  "author": "Ryan Kane <rmkane89@gmail.com> (https://github.com/rmkane)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmkane/example-ts-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rmkane/example-ts-library/issues"
+  },
+  "homepage": "https://github.com/rmkane/example-ts-library#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

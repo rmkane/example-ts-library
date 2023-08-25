@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Use library directly with script tag</title>
+  </head>
+  <body>
+    <h1>Use library directly with script tag</h1>
+    <script src="../dist/mylib.min.js"></script>
+    <script>
+      console.log = function (message) {
+        document.body.append(
+          Object.assign(document.createElement("div"), { textContent: message })
+        );
+      };
+
+      const { Jack, Tom } = MyLibrary;
+
+      const tom = new Tom();
+      const jack = new Jack();
+
+      console.log(tom.sayHello());
+      console.log(jack.sayHello());
+    </script>
+  </body>
+</html>

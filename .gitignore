@@ -1,0 +1,20 @@
+# Eclipse
+.classpath
+.project
+.settings
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Build
+dist
+
+# Mac
+.DS_Store
+
+/bin/
+/node_modules/
+/coverage/
